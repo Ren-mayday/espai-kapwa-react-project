@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../assets/logo_EK25_png-05.png";
 import "./Home.css";
 
 // 1. Array con 8 miembros - cada objeto tiene un id, name y role
@@ -23,14 +24,17 @@ const groups = [
 const Home = () => {
   // 3. useState guarda qué grupo estamos viendo ahora (empieza en 0)
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState("right");
 
   // 4. Resta 1 pero nunca baja de 0 (primer grupo)
   const handlePrev = () => {
+    setDirection("left");
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
   // 5. Suma pero nunca sube de groups.length -1 (último grupo)
   const handleNext = () => {
+    setDirection("right");
     setCurrentIndex((prev) => Math.min(prev + 1, groups.length - 1));
   };
 
@@ -49,7 +53,7 @@ const Home = () => {
             dolore magna aliqua.
           </p>
         </div>
-        <div className="hero__image-placeholder" />
+        <img src={logo} alt="Espai Kapwa logo" className="hero__image-placeholder" />
       </section>
 
       {/* SECCIÓN 2 — Qué es Espai Kapwa */}
@@ -76,7 +80,7 @@ const Home = () => {
           {/* 6. Renderiza solo las cards del grupo actual
               groups[currentIndex] es el array del grupo visible
               .map() recorre cada miembro y devuelve una card */}
-          <div className="carousel__track">
+          <div key={currentIndex} className={`carousel__track carousel__track--${direction}`}>
             {groups[currentIndex].map((member) => (
               <div key={member.id} className="team__card">
                 <div className="team__card-image" />
