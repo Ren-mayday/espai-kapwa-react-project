@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-primary: #f5c518;
+  --color-dark: #1a1a1a;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  scroll-margin-top: 120px; /* altura de Nav aproximada */
+}

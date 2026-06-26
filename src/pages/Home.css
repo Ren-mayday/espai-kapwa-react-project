@@ -1,0 +1,146 @@
+/* Snap container */
+.home {
+  height: calc(100vh - 120px); /* resta la altura del Nav */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Sección base */
+.section {
+  scroll-snap-align: start;
+  height: calc(100vh - 120px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ── HERO ── */
+.section--hero {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__text {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.hero__image-placeholder {
+  width: 380px;
+  height: 380px;
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* ── ABOUT ── */
+.section--about {
+  background-color: var(--color-dark);
+}
+
+.about__content {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.about__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.about__text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #eee;
+}
+
+/* ── TEAM ── */
+.section--team {
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.team__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.team__cards {
+  display: flex;
+  gap: 2rem;
+}
+
+.team__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.team__card-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.team__card-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+
+.team__card-role {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .section--hero {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__image-placeholder {
+    width: 260px;
+    height: 260px;
+  }
+
+  .team__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
