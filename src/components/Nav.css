@@ -31,6 +31,7 @@
   padding: 0.75rem 1.5rem;
   border-bottom: none;
   position: relative;
+  color: var(--color-dark);
 }
 
 .nav a::after {
@@ -48,6 +49,72 @@
 .nav a:hover::after,
 .nav a.active::after {
   width: 60%;
+}
+
+/* ── CAROUSEL ── */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.carousel__track {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Botones anterior/siguiente */
+.carousel__btn {
+  background: none;
+  border: 2px solid var(--color-dark);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--color-dark);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.carousel__btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Botón desactivado cuando no hay grupo anterior/siguiente */
+.carousel__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel__btn:disabled:hover {
+  background: none;
+  border-color: var(--color-dark);
+}
+
+/* Dots */
+.carousel__dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.carousel__dot--active {
+  background-color: var(--color-primary);
 }
 
 /* Hamburger — solo móvil */
